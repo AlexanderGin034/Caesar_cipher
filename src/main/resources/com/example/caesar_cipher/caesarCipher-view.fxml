@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.shape.Box?>
+<?import com.sun.javafx.webkit.theme.RenderThemeImpl.FormMenuListButton?>
+<?import javafx.scene.control.ButtonBar?>
+<?import org.controlsfx.control.CheckComboBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.layout.TilePane?>
+<?import eu.hansolo.tilesfx.Tile?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<HBox spacing="200" alignment="CENTER"
+      fx:controller="com.example.caesar_cipher.CaesarCipherController" xmlns:fx="http://javafx.com/fxml">
+    <HBox>
+        <VBox>
+        <padding>
+            <Insets top="40.0"/>
+        </padding>
+    <ImageView fitHeight="545" fitWidth="292" layoutX="-15.0" layoutY="-3.0">
+        <image>
+            <Image url="@caesar_cipher-img/theCaesar2.png.jpeg" />
+        </image>
+    </ImageView>
+        </VBox>
+    <VBox spacing="20">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+        <VBox spacing="3">
+            <Label styleClass="rome-font">Путь к файлу</Label>
+            <TextField styleClass="rome-font" fx:id="path" promptText="Введите путь к файлу"></TextField>
+        </VBox>
+        <VBox spacing="3">
+            <Label styleClass="rome-font">Ключ шифрования</Label>
+            <TextField styleClass="rome-font" fx:id="key" promptText="Введите ключ"></TextField>
+        </VBox>
+        <VBox spacing="3">
+            <Label styleClass="rome-font">Текст шифрования/дешифрования</Label>
+            <TextArea styleClass="rome-font" fx:id="textAreaStart" promptText="Введите текст или получите текст из файла по указанному пути" prefColumnCount="30" prefRowCount="8" wrapText="true"></TextArea>
+        </VBox>
+
+        <VBox spacing="3">
+            <HBox spacing="6"><Label styleClass="rome-font">Дополнительный текст</Label><CheckBox fx:id="checkBoxStatisticData"></CheckBox></HBox>
+            <TextArea styleClass="rome-font" fx:id="textAreaStatisticData" promptText="Дополнительный текст для криптоанализа методом статистического анализа" prefColumnCount="30" prefRowCount="8" wrapText="true"></TextArea>
+        </VBox>
+        <VBox spacing="3">
+            <Label styleClass="rome-font">Результат шифрования/дешифровния</Label>
+            <TextArea styleClass="rome-font" fx:id="textAreaResult" promptText="Результат" prefColumnCount="30" prefRowCount="8" wrapText="true"></TextArea>
+        </VBox>
+        <HBox alignment="CENTER" spacing="4">
+            <Button styleClass="rome-font" fx:id="choicePathBtn" text="Выбрать файл" onAction="#choicePatButtonClick"></Button>
+            <Button styleClass="rome-font" fx:id="encodingBtn" text="Шифровать" onAction="#encodingBtnButtonClick"></Button>
+            <Button styleClass="rome-font" fx:id="decodingBtn" text="Дешифровать" onAction="#decodingBtnButtonClick"></Button>
+            <Button styleClass="rome-font" fx:id="BruteForce" text="Brutus force" onAction="#BruteForceButtonClick"></Button>
+            <Button styleClass="rome-font" fx:id="StatisticalData" text="Cтатистический анализ" onAction="#StatisticalDataButtonClick"></Button>
+            <Button styleClass="rome-font" fx:id="saveResult" text="Сохранить результат" onAction="#saveResultButtonClick"></Button>
+            <Button styleClass="rome-font" fx:id="swapText" text="Ракировка" onAction="#swapTextButtonClick"></Button>
+            <Button styleClass="button-all-clear" fx:id="clearAllBtn" text="Сбросить все" onAction="#clearAllBtnButtonClick"></Button>
+        </HBox>
+    </VBox>
+    </HBox>
+</HBox>
+
